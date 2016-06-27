@@ -1,0 +1,67 @@
+
+<!-- saved from url=(0043)https://www.readcube.com/testing/cdn_status -->
+<html class="js-success"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>
+  .success { display: none; background: lightgreen; }
+  .error { display: none; background: pink; }
+  .js-success #loaded-js { display: block; }
+  .js-error #error-js { display: block; }
+  .css-error #error-css { display: block; }
+</style>
+<link type="text/css" rel="stylesheet" href="./cdn_status-30cabeefa479cf1ece72fc12f0283572.css"><script type="text/javascript" src="./cdn_status-0ec23b5636e7b84febc62792a76e6d76.js"></script></head><body><h1>Testing ReadCube CDN availability:</h1>
+<p>Loading CSS...</p>
+<p class="success" id="loaded-css">CSS loaded successfully.</p>
+<p class="error" id="error-css">CSS load error.</p>
+<p>Loading JS...</p>
+<p class="success" id="loaded-js">JS loaded successfully.</p>
+<p class="error" id="error-js">JS load error.</p>
+<script async="" src="./analytics.js"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+  ga('create', "UA-19582843-2", 'auto');
+  
+  function addClass(elem, name) {
+    elem.className = elem.className ? [elem.className, name].join(' ') : name;
+  }
+  
+  function trackSuccess(contentType) {
+    ga('send', 'event', 'ReadCubeCDN', 'OK', contentType);
+  }
+  
+  function trackError(contentType) {
+    ga('send', 'event', 'ReadCubeCDN', 'FAIL', contentType);
+  }
+  
+  var head = document.getElementsByTagName('head').item(0);
+  var JS_TYPE = 'application/javascript';
+  var CSS_TYPE = 'text/css';
+  
+  var link = document.createElement('link');
+  link.type = 'text/css';
+  link.rel = 'stylesheet'
+  link.href = "//green.readcube-cdn.com/assets/cdn_status-30cabeefa479cf1ece72fc12f0283572.css";
+  link.onload = function() {
+    trackSuccess(CSS_TYPE);
+  };
+  link.onerror = function() {
+    addClass(document.documentElement, 'css-error');
+    trackError(CSS_TYPE);
+  };
+  
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = "//green.readcube-cdn.com/assets/cdn_status-0ec23b5636e7b84febc62792a76e6d76.js";
+  script.onload = function() {
+    trackSuccess(JS_TYPE);
+  };
+  script.onerror = function() {
+    addClass(document.documentElement, 'js-error');
+    trackError(JS_TYPE);
+  };
+  
+  head.appendChild(link);
+  head.appendChild(script);
+</script>
+</body></html>

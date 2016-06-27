@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- saved from url=(0115)http://assets.adobedtm.com/6e626c9ec247e474f6b98eb15a79a185cf7e26a5/scripts/satellite-57290b7164746d514c002729.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"></head><body>
+    <script>
+      (function(){
+        function escapeForHtml(str){
+          if (!str) return str
+          return str
+            .replace(/\&/g, '&amp;')
+            .replace(/\</g, '&lt;')
+            .replace(/\>/g, '&gt;')
+            .replace(/\"/g, '&quot;')
+            .replace(/\'/g, '&#x27;')
+            .replace(/\//g, '&#x2F;')
+        }
+
+        var regexChars = /[.*+?^${}()|[\]\\]/g;
+        function escapeForRegex(str) {
+          return str.replace(regexChars, "\\$&");
+        }
+
+        function parseQueryString(){
+          var ret = {}, parts = location.search.substring(1).split('&');
+          for (var i = parts.length; i--;) {
+            var vardef = parts[i].split('='), varname = vardef[0], value = vardef[1];
+            ret[varname] = unescape(value);
+          }
+          return ret;
+        }
+
+        var queryParams = parseQueryString();
+
+        var markup = "\n<script type='text/javascript'>\n(function(){var g=function(e,h,f,g){\nthis.get=function(a){for(var a=a+\"=\",c=document.cookie.split(\";\"),b=0,e=c.length;b<e;b++){for(var d=c[b];\" \"==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null};\nthis.set=function(a,c){var b=\"\",b=new Date;b.setTime(b.getTime()+6048E5);b=\"; expires=\"+b.toGMTString();document.cookie=a+\"=\"+c+b+\"; path=/; \"};\nthis.check=function(){var a=this.get(f);if(a)a=a.split(\":\");else if(100!=e)\"v\"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(\":\"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case \"v\":return!1;case \"r\":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(\":\")),!c}return!0};\nthis.go=function(){if(this.check()){var a=document.createElement(\"script\");a.type=\"text/javascript\";a.src=g+ \"&t=\" + (new Date()).getTime();document.body&&document.body.appendChild(a)}};\nthis.start=function(){var a=this;window.addEventListener?window.addEventListener(\"load\",function(){a.go()},!1):window.attachEvent&&window.attachEvent(\"onload\",function(){a.go()})}};\ntry{(new g(100,\"r\",\"QSI_S_SI_5jOYDHQ5OssIz09\",\"//znbinlpv4jhtvb8bo-wiley.siteintercept.qualtrics.com/WRSiteInterceptEngine/?Q_SIID=SI_5jOYDHQ5OssIz09&Q_LOC=\"+encodeURIComponent(window.location.href))).start()}catch(i){}})();\n</scr"+"ipt><div id='SI_5jOYDHQ5OssIz09'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>";
+
+        for (var name in queryParams){
+          var regex = new RegExp('%' + escapeForRegex(name) + '%', 'ig');
+          markup = markup.replace(regex, 
+            escapeForHtml(queryParams[name]));
+        }
+
+        document.write(markup)
+      })();
+    </script>
+<script type="text/javascript">
+(function(){var g=function(e,h,f,g){
+this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null};
+this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "};
+this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0};
+this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g+ "&t=" + (new Date()).getTime();document.body&&document.body.appendChild(a)}};
+this.start=function(){var a=this;window.addEventListener?window.addEventListener("load",function(){a.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){a.go()})}};
+try{(new g(100,"r","QSI_S_SI_5jOYDHQ5OssIz09","//znbinlpv4jhtvb8bo-wiley.siteintercept.qualtrics.com/WRSiteInterceptEngine/?Q_SIID=SI_5jOYDHQ5OssIz09&Q_LOC="+encodeURIComponent(window.location.href))).start()}catch(i){}})();
+</script><div id="SI_5jOYDHQ5OssIz09"><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+  
+
+<script type="text/javascript" src="./saved_resource"></script></body></html>

@@ -1,0 +1,1 @@
+addClass(document.documentElement,"js-success");
